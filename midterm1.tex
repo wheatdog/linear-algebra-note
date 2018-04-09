@@ -61,24 +61,31 @@
             \item The ordered set $\beta = \langle x, T(x), \dots, T^{k-1}(x) \rangle$ is a basis of $U$
             \item If $\sum_{i=0}^k a_i T^i(x) = 0_V$ with $a_k = 1_F$, then $f_{T_U}(t) = (-1)^k \sum_{i=0}^k a_i t^i$
         \end{enumerate*}
-    \item[Definition 內積函數] 首項線性、共軛對稱、正定
+    \item[Definition 內積函數]
+        \begin{enumerate*}[itemjoin={;\quad}]
+            \item $d(ax+y,z) = a \cdot d(x,z) + d(y,z)$
+            \item $d(y,x) = \bar{d(x,y)}$
+            \item if $ x \neq 0_V$, then $d(x,x) \in \mathcal{R}^+$
+        \end{enumerate*}
     \item[6.1 內積基本性質]
-    \item[6.3 正交定理] Let $x$ be a vector in inner-product space $V$. Let $S$ be a nonempty orthogonal set of nonzero vectors in $V$. Let $R$ be a finite subset of $S$. If $x = \sum_{y \in R} a_y y$ holds for scalars $a_y$, then $a_y = \frac{\langle x | y \rangle}{\langle y | y \rangle}$ holds for each $y \in R$
-    \item[正交無零則不冗]
+        \begin{enumerate*}[itemjoin={;\quad}]
+            \item $\langle x | ay+z \rangle = \bar{a} \langle x | y \rangle + \langle x | z \rangle$
+            \item $\langle x | 0_V \rangle = \langle 0_V | x \rangle = 0_F$
+            \item $\langle x | x \rangle = 0_F \iff x = 0_V$
+            \item If $\langle x | y \rangle = \langle x | z \rangle$ holds for all $x$, then $y = z$
+        \end{enumerate*}
+    \item[6.3 正交定理] Let $x$ be a vector in inner-product space $V$. Let $S$ be a nonempty orthogonal set of nonzero vectors in $V$. Let $R$ be a finite subset of $S$. If $x = \sum_{y \in R} a_y y$ holds for scalars $a_y$, then $a_y = \frac{\langle x | y \rangle}{\langle y | y \rangle}$ holds for each $y \in R$; (note:正交無零則不冗)
     \item[6.4 正交演算法] For any linearly independent subset $\alpha$ of inner-product space $V$ with $|\alpha| = n$, the set $\beta$ recursively defined below is orthogonal basis of $span(\alpha)$: $\beta_1 = \alpha_1$ and $\beta_j = \alpha_j - \sum_{i=1}^{j-1} \frac{\langle \alpha_j | \beta_i \rangle}{\langle \beta_i | \beta_i \rangle} \dot \beta_i$ for each $j = 2, \dots, n$.
     \item[6.2 長度的基本性質]
+        \begin{enumerate*}[itemjoin={;\quad}]
+            \item $\| a x \| = |a| \|x\|$
+            \item $\|x\| \in \mathcal{R}^+ \cup \{0_R\}$
+            \item $\|x\| = 0_R \iff x = 0_V$
+            \item Cauchy-Schwarz inequality $|\langle x|y\rangle| \leq \|x\| \cdot \|y\|$
+            \item Triangle inequality $|\ x + y \| \leq \|x\| + \|y\|$
+        \end{enumerate*}
     \item[Definition 正交補集] For any nonempty subset $S$ of inner-product space $W$, the orthogonal complement of $S$ is $S^\perp \equiv \{ x \in W: \langle x | y \rangle = 0_F \text{ holds for all } y \in S \}$.
     \item[正補定理] If $V$ is a subspace of an inner-product space $W$ with $dim(W) < \infty$, then $V \bigoplus V^\perp = W$.
-    \item[6.25 特徵值譜定理] Let $T \in \mathcal{L}(V)$ for inner-product space $V$ with $dim(V) < \infty$ that has an orthonormal eigenbasis for $T$. Let $\lambda_1, \dots, \lambda_k$ be the distinct eigenvalues of $T$.
-        \begin{enumerate}
-            \item For $i \in \{ 1, \dots, k \}$, $E_T(\lambda_i)^\perp = E_T(\lambda_1) \bigoplus \dots \bigoplus E_T(\lambda_{i-1}) \bigoplus E_T(\lambda_{i+1}) \bigoplus \dots \bigoplus E_T(\lambda_k)$
-            \item If each $T_i$ with $1 \leq i \leq k$ is the orthogonal projection of $V$ on $E_T(\lambda_i)$, then
-                \begin{enumerate}
-                    \item For indices $1 \leq i$, $j \leq k$, if $i = j$, then $T_i T_j = T_i$; if $i \neq j$, $T_i T_j = T_0$
-                    \item (Resolution of $I_V$) $T_1 + T_2 + \dots + T_k = I_V$
-                    \item (Spectral decomposition of $T$) $\lambda_1 T_1 + \lambda_2 T_2 + \dots + \lambda_k T_k = T$
-                \end{enumerate}
-        \end{enumerate}
     \item[正交投影] A projection $T$ of inner-product space $W$ is orthogonal if $T(W)^\perp = N(T)$; $N(T)^\perp = T(W)$.
     \item[6.8 泛函定理] For any functional $f$ on an inner-product space $V$ with $dim(V) < \infty$, there is a unique vector $y \in V$ such that $f(x) = \langle x | y \rangle$ holds for all $x \in V$.
     \item[6.9 翻牆定理] For any linear operator $T$ on any inner-product space $V$ with $dim(V) < \infty$, there is a unique operator $T^*$ on $V$ such that $\langle T(x) | y \rangle = \langle x | T^* (y) \rangle$ holds for all vectors $x, y \in V$. Moreover, this unique $T^*$ is linear.
@@ -105,8 +112,19 @@
             \item If $(\lambda, x)$ is an eigenpair of $T$, then $(\bar{\lambda}, x)$ is an eigenpair of $T^*$
             \item If $x$ and $y$ are in distinct eigenspaces of $T$, then $\langle x | y \rangle = 0_F$
         \end{enumerate*}
+    \item[6.25 特徵值譜定理] Let $T \in \mathcal{L}(V)$ for inner-product space $V$ with $dim(V) < \infty$ that has an orthonormal eigenbasis for $T$. Let $\lambda_1, \dots, \lambda_k$ be the distinct eigenvalues of $T$.
+        \begin{enumerate}
+            \item For $i \in \{ 1, \dots, k \}$, $E_T(\lambda_i)^\perp = E_T(\lambda_1) \bigoplus \dots \bigoplus E_T(\lambda_{i-1}) \bigoplus E_T(\lambda_{i+1}) \bigoplus \dots \bigoplus E_T(\lambda_k)$
+            \item If each $T_i$ with $1 \leq i \leq k$ is the orthogonal projection of $V$ on $E_T(\lambda_i)$, then
+                \begin{enumerate}
+                    \item For indices $1 \leq i$, $j \leq k$, if $i = j$, then $T_i T_j = T_i$; if $i \neq j$, $T_i T_j = T_0$
+                    \item (Resolution of $I_V$) $T_1 + T_2 + \dots + T_k = I_V$
+                    \item (Spectral decomposition of $T$) $\lambda_1 T_1 + \lambda_2 T_2 + \dots + \lambda_k T_k = T$
+                \end{enumerate}
+        \end{enumerate}
     \item[Corollary 4 特徵值譜推論] If $V$ has an orthonormal eigenbasis for $T$, then the othogonal projection $T_i$ of $V$ on $E_T(\lambda_i)$ is a polynomial in $T$, where $\lambda_i$ is the $i$-th distinct eigenvalue of $T$.
     \item[6.14 舒爾定理] If $f_T(t)$ splits, then there is an orthonormal basis $\beta$ of $V$ such that $[T]_{\beta}^{\beta}$ is upper triangular
+    \item[2.14 魔法定理 \& 2.11 魔杖定理] $[T(y)]_{\gamma} = [T]^{\gamma}_{\beta} \times [y]_{\beta}$; $[TT^\prime]^{\gamma}_{\alpha} = [T]^{\gamma}_{\beta} \times [T^\prime]^{\beta}_{\alpha}$, which $[T]^{\beta}_{\alpha} = [T(\alpha_j)]_{\beta}$
         
 \end{description}
 \end{document}
