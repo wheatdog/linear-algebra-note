@@ -1,4 +1,4 @@
-TARGET := midterm1.tex
+TARGET := midterm2.tex
 
 all: pdf
 

@@ -1,0 +1,77 @@
+%
+% Homework Details
+% - Title
+% - Due date
+% - University
+% - Class
+% - Class Alias
+% - Class Section
+% - Instructor
+% - Author
+% - AuthorID
+%
+
+\documentclass[9pt, twocolumn]{extarticle}
+
+%
+% Packages
+%
+
+\usepackage[a4paper,margin=0.5in,landscape]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[inline]{enumitem}
+
+%
+% Chinese
+%
+
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK TC Regular}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+%
+% Basic Document Settings
+%
+
+%\topmargin=-1.00in
+%\evensidemargin=0in
+%\oddsidemargin=0in
+%\textwidth=6.5in
+%\textheight=10.0in
+%\headsep=0.25in
+%
+%\linespread{1.0}
+
+\begin{document}
+
+\begin{description}
+    \item[自伴線運] $T = T^*$
+    \item[自伴方陣] 
+    \item[自伴小觀察] Let $\beta$ is an orthonormal basis of a finite-dimensional inner-product space $V$, then $T$ is self-adjoint iff $[T]^\beta_\beta$ is self-adjoint.
+    \item[自伴線運基本性質] If $T$ is a self-adjoint linear operator on an inner-product space $V$ over $F \in \{\mathbb{R}, \mathbb{C}\}$ with $\text{dim}(V)<\infty$, then
+	    \begin{enumerate*}
+		    \item each eigenvalue of $T$ is real (even if $F = \mathbb{C}$, and)
+		    \item the characteristic polynomial $f_T (t)$ of $T$ splits (even if $F = \mathbb{R}$)
+	\end{enumerate*}
+    \item[6.24 投影：正交$\Leftrightarrow$自伴] If $T$ is a projection of inner-product space $W$, then $T$ is an orthogonal projection of $W$ iff $T$ is self-adjoint
+    \item[自伴線運推論] Let $T \in \mathbb{L}(V)$ for inner-product space $W$ over $F = \mathbb{C}$ wth $\text{dim}(V) < \infty$. If $T$ is self-adjoint iff every eigenvalue of $T$ is real.
+    \item[6.17 自伴定理]
+    \item[Def 么正方陣、正交方陣] Let $Q \in F^{n\times n}$ with $F \in \{\mathbb{C}, \mathbb{R}\}$,
+	    \begin{itemize*}
+		    \item Q is unitary if $Q^*Q = I_n$ (i.e. $Q^*=Q^{-1}$)
+		    \item Q is orthogonal if $Q^t Q = I_n$ (i.e. $Q^t = Q^{-1}$)
+	    \end{itemize*}
+    \item[Def 么正、正交等價] Let $A, B \in F^{n \times n}$ with $F \in \{\mathbb{C}, \mathbb{R}\}$,
+	    \begin{itemize*}
+		    \item $A$ is unitarily equivalent to $B$ if there is a unitary matrix $Q$ with $A = Q^*BQ$
+		    \item $A$ is orthogonally equivalent to $B$ if there is an orthogonal matrix $Q$ with $A = Q^tBQ$
+	    \end{itemize*}
+    \item[6.19]
+    \item[6.20] If $A \in \mathbb{R}^{n\times n}$, then $A$ is self-adjoint (i.e. symmetric) iff $A$ is orthogonally (i.e. unitarily) equivalent to a diagonal matrix in $\mathbb{R}^{n\times n}$
+
+        
+\end{description}
+\end{document}
