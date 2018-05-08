@@ -45,33 +45,65 @@
 %
 %\linespread{1.0}
 
+\newcommand{\vsdim}{\ensuremath{\text{dim}}}
+\newcommand{\rank}{\ensuremath{\text{rank}}}
+\newcommand{\realnum}{\mathbb{R}}
+\newcommand{\complexnum}{\mathbb{C}}
+\newcommand{\ltrans}{\mathbb{L}}
+
 \begin{document}
 
 \begin{description}
-    \item[自伴線運] $T = T^*$
-    \item[自伴方陣] 
-    \item[自伴小觀察] Let $\beta$ is an orthonormal basis of a finite-dimensional inner-product space $V$, then $T$ is self-adjoint iff $[T]^\beta_\beta$ is self-adjoint.
-    \item[自伴線運基本性質] If $T$ is a self-adjoint linear operator on an inner-product space $V$ over $F \in \{\mathbb{R}, \mathbb{C}\}$ with $\text{dim}(V)<\infty$, then
+        % 5th slide
+    \item[6.16 常態定理] Let $T\in$ 
+    \item[Def 自伴線運] $T = T^*$
+    \item[Def 自伴方陣] 
+    \item[Obs 自伴小觀察] Let $\beta$ is an orthonormal basis of a finite-dimensional inner-product space $V$, then $T$ is self-adjoint iff $[T]^\beta_\beta$ is self-adjoint.
+    \item[Obs 自伴線運基本性質] If $T$ is a self-adjoint linear operator on an inner-product space $V$ over $F \in \{\realnum, \complexnum\}$ with $\vsdim(V)<\infty$, then
 	    \begin{enumerate*}
-		    \item each eigenvalue of $T$ is real (even if $F = \mathbb{C}$, and)
-		    \item the characteristic polynomial $f_T (t)$ of $T$ splits (even if $F = \mathbb{R}$)
+		    \item each eigenvalue of $T$ is real (even if $F = \complexnum$, and)
+		    \item the characteristic polynomial $f_T (t)$ of $T$ splits (even if $F = \realnum$)
 	\end{enumerate*}
     \item[6.24 投影：正交$\Leftrightarrow$自伴] If $T$ is a projection of inner-product space $W$, then $T$ is an orthogonal projection of $W$ iff $T$ is self-adjoint
-    \item[自伴線運推論] Let $T \in \mathbb{L}(V)$ for inner-product space $W$ over $F = \mathbb{C}$ wth $\text{dim}(V) < \infty$. If $T$ is self-adjoint iff every eigenvalue of $T$ is real.
+    \item[Cor 自伴線運推論] Let $T \in \ltrans(V)$ for inner-product space $W$ over $F = \complexnum$ wth $\vsdim(V) < \infty$. If $T$ is self-adjoint iff every eigenvalue of $T$ is real.
+    \item[Cor 常態線運推論]
+
+
+        % 6th slide
     \item[6.17 自伴定理]
-    \item[Def 么正方陣、正交方陣] Let $Q \in F^{n\times n}$ with $F \in \{\mathbb{C}, \mathbb{R}\}$,
+    \item[Def 么正方陣、正交方陣] Let $Q \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$,
 	    \begin{itemize*}
 		    \item Q is unitary if $Q^*Q = I_n$ (i.e. $Q^*=Q^{-1}$)
 		    \item Q is orthogonal if $Q^t Q = I_n$ (i.e. $Q^t = Q^{-1}$)
 	    \end{itemize*}
-    \item[Def 么正、正交等價] Let $A, B \in F^{n \times n}$ with $F \in \{\mathbb{C}, \mathbb{R}\}$,
+    \item[Def 么正、正交等價] Let $A, B \in F^{n \times n}$ with $F \in \{\complexnum, \realnum\}$,
 	    \begin{itemize*}
 		    \item $A$ is unitarily equivalent to $B$ if there is a unitary matrix $Q$ with $A = Q^*BQ$
 		    \item $A$ is orthogonally equivalent to $B$ if there is an orthogonal matrix $Q$ with $A = Q^tBQ$
 	    \end{itemize*}
     \item[6.19]
-    \item[6.20] If $A \in \mathbb{R}^{n\times n}$, then $A$ is self-adjoint (i.e. symmetric) iff $A$ is orthogonally (i.e. unitarily) equivalent to a diagonal matrix in $\mathbb{R}^{n\times n}$
-
+    \item[6.20] If $A \in \realnum^{n\times n}$, then $A$ is self-adjoint (i.e. symmetric) iff $A$ is orthogonally (i.e. unitarily) equivalent to a diagonal matrix in $\realnum^{n\times n}$
+   
+    \item[6.21 方陣舒爾]
+    \item[6.18]
         
+    \item[么正定理] 
+    \item[正交自伴定理]
+    \item[6.13 最短解] If $E: Ax = b$ with $A \in F^{m\times n}$ and $b \in F^m$ is a system of linear equations with $S(E) \neq \emptyset$, then there is exactly one vector $x$ in \[S(E) \cap L_{A^*}(F^m)\] w.r.t. the standard inner product. Moreover, the vector $x$ is the unique vector in $S(E)$ with minimum $||x||$
+    \item[6.12 最佳近似解]
+    \item[Obs 標準內積觀察]
+    \item[Obs 矩陣位階觀察]
+    \item[Obs 伴隨矩陣觀察]
+        
+        % 7th slide 
+    \item[6.27 SVD] For any matrix $A = F^{m\times n}$ with rank $r$, \[A = QSR*\] holds for:
+
+    \item[Def 正定] A self-adjoint $T \in \ltrans(V)$ for inner-product space $V$ over $F$ is positive definite if \[<T(x)|x>\]
+
+    \item[6.26 奇異值定理] Let $T \in \ltrans(V, W)$ for inner-product spaces $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r$, $\vsdim(V) = n$, and $\vsdim(W) = m$.
+    \item[6.27 SVD] For any matrix $A = F^{m\times n}$
+
+    \item[Def Pseudoinverse] $T^\dagger \in \ltrans(W, V)$ defined by $T^\dagger = (T')^{-1}T''$
+    \item[偽反線轉定理]
 \end{description}
 \end{document}
