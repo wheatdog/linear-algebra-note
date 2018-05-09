@@ -64,7 +64,7 @@
 		    \item each eigenvalue of $T$ is real (even if $F = \complexnum$, and)
 		    \item the characteristic polynomial $f_T (t)$ of $T$ splits (even if $F = \realnum$)
 	\end{enumerate*}
-    \item[6.24 投影：正交$\Leftrightarrow$自伴] If $T$ is a projection of inner-product space $W$, then $T$ is an orthogonal projection of $W$ iff $T$ is self-adjoint
+    \item[6.24 投影：正交$\Leftrightarrow$自伴] If $T$ is a projection of $W$, then $T$ is an orthogonal projection of $W$ iff $T$ is self-adjoint
     \item[Cor 自伴線運推論] Let $T \in \ltrans(V)$ for inner-product space $W$ over $F = \complexnum$ wth $\vsdim(V) < \infty$. If $T$ is normal, $T$ is self-adjoint iff every eigenvalue of $T$ is real.
     \item[6.17 自伴定理] Let $T \in \ltrans(V)$ for $V$ over $\realnum$ with $\vsdim(V)<\infty$. $V$ has an orthonormal eigenbasis for $T$ iff T is self-adjoint.
     \item[Cor 常態線運推論] If $T\in \ltrans(V)$ for $W$ over $\complexnum$ with $\vsdim(W)< \infty$, then $T$ is normal iff $T^* = g(T)$ for some polynomial $g \in \polynom(\complexnum)$
@@ -117,15 +117,49 @@
     \item[Obs 伴隨矩陣觀察] For any $A \in F^{m\times n}$, if $\rank(A) = n$, then $A^*A\in F^{n\times n}$ is invertible.
         
         % 7th slide 
+    \item[Def 正定] A self-adjoint $T \in \ltrans(V)$ for $V$ over $F$ is positive definite (semidefinite) if $\langle T(x)|x\rangle \in \realnum^+$ ($\langle T(x)|x\rangle \in \realnum^+ \cup \{0_\realnum\}$) holds for all $x \in V \backslash \{0_V\}$ ($x \in V$)
 
-    \item[Def 正定] A self-adjoint $T \in \ltrans(V)$ for inner-product space $V$ over $F$ is positive definite if \[<T(x)|x>\]
-
-    \item[6.26 奇異值定理] Let $T \in \ltrans(V, W)$ for inner-product spaces $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r$, $\vsdim(V) = n$, and $\vsdim(W) = m$.
-    \item[6.27 SVD] For any matrix $A = F^{m\times n}$ with rank $r$, \[A = QSR*\] holds for:
-
-    \item[Def Pseudoinverse] $T^\dagger \in \ltrans(W, V)$ defined by $T^\dagger = (T')^{-1}T''$
-    \item[偽反線轉定理]
-
+    \item[6.26 奇異值定理] Let $T \in \ltrans(V, W)$ for $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r$, $\vsdim(V) = n$, and $\vsdim(W) = m$.
+        \begin{enumerate*}[label=({\alph*})]
+            \item There exist a set $\sigma = \langle \sigma_1, \cdots, \sigma_r \rangle$ of positive real numbers and orthonormal bases $\beta  = \langle \beta_1, \cdots , \beta_n \rangle$ of $V$ and $\gamma = \langle \gamma_1, \cdots , \gamma_m \rangle$ of $W$ s.t. with $\sigma_k = 0_F$ for $r+1 \leq k \leq \max(n, m)$ and $\gamma_k = 0_W$ for $m+1 \leq k \leq n$ 
+                \begin{enumerate*}[label={\arabic*}.]
+                    \item $T(\beta_j) = \sigma_j \gamma_j$ holds for each $j = 1, \cdots, n$. 
+                \end{enumerate*}
+            \item Moreover, the following hold for any such $\sigma,\beta,\gamma$:
+                \begin{enumerate*}[label={\arabic*}.]
+                        \setcounter{enumii}{1}
+                        \item $T^*(\gamma_i) = \sigma_i \beta_i$ holds for $i = 1,\cdots, m$ with $\beta_k = 0_V$ for $n+1 \leq k \leq m$
+                        \item Each $(\sigma^2_j, \beta_j)$ with $1 \leq j \leq n$ is an eigenpair of $T^*T$
+                        \item Each $(\sigma^2_i, \gamma_i)$ with $1 \leq i \leq m$ is an eigenpair of $TT^*$
+                \end{enumerate*}
+        \end{enumerate*}
+    \item[6.27 SVD] For any matrix $A = F^{m\times n}$ with rank $r$, $A = QSR*$ holds for: 
+        \begin{itemize*}
+            \item unitary matrices $Q \in F^{m\times m}$ and $R \in F^{n\times n}$
+            \item a diagonal matrix $S \in F^{m\times n}$ whose $l = \min (m, n)$ diagonal elements $\sigma_i = S_{i, i}$ with $i \in \{1,\cdots ,l\}$ satisfy 
+                \begin{enumerate*}
+                    \item $\sigma_1, \cdots , \sigma_r \in \realnum^+$
+                    \item $\sigma_{r+1} = \cdots = \sigma_l = 0_F$
+                \end{enumerate*}
+        \end{itemize*}
+        
+        
         % 8th slide
+    \item[Def 偽反線轉] $T^\dagger \in \ltrans(W, V)$ defined by $T^\dagger = (T')^{-1}T''$
+    \item[偽反線轉定理] Let $T \in \ltrans(V,W)$ for $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r, \vsdim(V)=n,\vsdim(W)=m$. If $\sigma, \beta, \gamma$ are as ensured by \textbf{6.26}, then $T^\dagger$ is the unique function in $\ltrans(W, V)$ satisfying $T^\dagger(\gamma_j)=\left\{\begin{array}{cl} \frac{1}{\sigma_j}\beta_j & \text{if} 1 \leq j \leq r\\ 0_V & \text{otherwise}\end{array}\right.$
+    \item[偽反線運等價條件] If $T_1 \in \ltrans(V, W)$ and $T_2 \in \ltrans(W, V)$ for $V, W$ over $F \in \{\complexnum, \realnum\}$ and $\vsdim < \infty$, then $T_2 = T_1^\dagger$ iff \textbf{all} following hold:
+        \begin{enumerate*}[label=({\alph*})]
+            \item $T_1T_2T_1=T_1$
+            \item $T_2T_1T_2=T_2$
+            \item $T_1T_2$ and $T_2T_1$ are self-adjoint
+        \end{enumerate*}
+    \item[偽反矩陣定理] If $A = QSR^*$ is a SVD of matrix $A \in F^{m\times n}$ with $F \in \{\complexnum, \realnum\}$, then $A^\dagger = RS^\dagger Q^*$ is a SVD of matrix $A^\dagger \in F^{n\times m}$
+    \item[6.30] For any system of linear equations $E: Ax = b$ with $A \in F^{m\times n}$, $y = A^\dagger b$ is the unique vector in $F^n$ with 
+        \begin{itemize*}
+            \item $\|Ay-b\|\leq \|Ax - b\|$ for any $x \in F^n$ and 
+            \item $\|y\| < \|x\|$ any $x \in F^n \backslash \{y\}$ with $\|Ay-b\| = \|Ax-b\|$
+        \end{itemize*}
+    \item[6.28 極分解定理] For any square matrix $A \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$, there exist a unitary matrix $Q \in F^{n\times n}$ and a positive semidefinite matrix $P \in F^{n\times n}$ s.t. $A = QP$. And, if $A$ is invertible, then the decomposition is unique
+
 \end{description}
 \end{document}
