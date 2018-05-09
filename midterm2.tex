@@ -71,7 +71,7 @@
 
 
         % 6th slide
-    \item[Def 么正方陣、正交方陣] Let $Q \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$,
+    \item[Def 么正、正交方陣] Let $Q \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$,
 	    \begin{itemize*}
 		    \item Q is unitary if $Q^*Q = I_n$ (i.e. $Q^*=Q^{-1}$)
 		    \item Q is orthogonal if $Q^t Q = I_n$ (i.e. $Q^t = Q^{-1}$)
@@ -81,27 +81,47 @@
 		    \item $A$ is unitarily equivalent to $B$ if there is a unitary matrix $Q$ with $A = Q^*BQ$
 		    \item $A$ is orthogonally equivalent to $B$ if there is an orthogonal matrix $Q$ with $A = Q^tBQ$
 	    \end{itemize*}
-    \item[6.19]
     \item[6.20] If $A \in \realnum^{n\times n}$, then $A$ is self-adjoint (i.e. symmetric) iff $A$ is orthogonally (i.e. unitarily) equivalent to a diagonal matrix in $\realnum^{n\times n}$
+    \item[6.19] If $A \in \complexnum^{n\times n}$, then $A$ is normal iff $A$ is unitarily equivalent to a diagonal matrix in $\complexnum^{n\times n}$
    
-    \item[6.21 方陣舒爾]
-    \item[6.18]
+    \item[6.21 方陣舒爾] If $f_A(t)$ splits for $A \in F^{n\times n}$, then $A$ is unitarily equivalent to an upper-triangular matrix in $F^{n\times n}$.
         
-    \item[么正定理] 
-    \item[正交自伴定理]
-    \item[6.13 最短解] If $E: Ax = b$ with $A \in F^{m\times n}$ and $b \in F^m$ is a system of linear equations with $S(E) \neq \emptyset$, then there is exactly one vector $x$ in \[S(E) \cap L_{A^*}(F^m)\] w.r.t. the standard inner product. Moreover, the vector $x$ is the unique vector in $S(E)$ with minimum $||x||$
-    \item[6.12 最佳近似解]
-    \item[Obs 標準內積觀察]
-    \item[Obs 矩陣位階觀察]
-    \item[Obs 伴隨矩陣觀察]
+    \item[么正、正交線運] Let $T \in \ltrans(V)$, $V$ is an inner-product space over $F\in \{\complexnum, \realnum\}$. 
+        \begin{itemize*}
+            \item $T$ is unitary if $T^*T = I_V$
+            \item $T$ is orthogonal if $T$ is unitary and $F = \realnum$
+        \end{itemize*}
+    \item[6.18] If $T \in \ltrans(V)$ for $V$ over $F\in \{\complexnum, \realnum\}$, with $\vsdim(V)<\infty$, then the following are equivalent:
+        \begin{itemize*}
+            \item $T^*T=I_V$
+            \item $\langle T(x) | T(y)\rangle = \langle x | y \rangle$ holds for all vectors $x, y \in V$
+            \item For any orthogonal eigenbasis $\beta$ of $V$, $T(\beta)$ is an orthonormal basis of $V$
+            \item There is a $\beta \subseteq V$ s.t. $\beta$ and $T(\beta)$ are both orthonormal bases of $V$
+            \item $\| T(x)\| = \|x \|$ holds for all vectors $x \in V$
+    
+        \end{itemize*}
+
+    \item[Cor 么正、正交自伴定理] If $T \in \ltrans(V)$ for $V$ over $\complexnum$ ($\realnum$) with $\vsdim(V) < \infty$, then $T$ is unitary (orthogonal and self-adjoint) iff 
+        \begin{itemize*}
+                \item $V$ has an orthonormal eigenbasis for $T$
+                \item each eigenvalue og $T$ has absolute value 1
+        \end{itemize*}
+    \item[6.13 最短解] If $E: Ax = b$ with $A \in F^{m\times n}$ and $b \in F^m$ is a system of linear equations with $S(E) \neq \emptyset$, then there is exactly one vector $x$ in $S(E) \cap L_{A^*}(F^m)$ w.r.t. the standard inner product. Moreover, the vector $x$ is the unique vector in $S(E)$ with minimum $||x||$
+    \item[6.12 最佳近似解] Let $A \in F^{m\times n}$ and $b \in F^{m}$.
+        \begin{itemize*}
+                \item For any inner-product function of $F^m$, $\exists x \in F^n$ that minimizes $\|Ax-b\|$
+                \item   If $\rank(A) = n$, then $x = (A^*A)^{-1}A^*b$ is the unique minimizer of $\|Ax-b\|$ w.r.t. the standard inner product of $F^m$
+        \end{itemize*}
+    \item[Obs 標準內積觀察] Let $A \in F^{m\times n}$. For any $x \in F^n$ and $y \in F^m$, we have $\langle Ax | y \rangle_m = \langle x | A^* y \rangle_n$
+    \item[Obs 矩陣位階觀察] For any $A \in F^{m\times n}$, $\rank(A^*A)=\rank(A)$
+    \item[Obs 伴隨矩陣觀察] For any $A \in F^{m\times n}$, if $\rank(A) = n$, then $A^*A\in F^{n\times n}$ is invertible.
         
         % 7th slide 
-    \item[6.27 SVD] For any matrix $A = F^{m\times n}$ with rank $r$, \[A = QSR*\] holds for:
 
     \item[Def 正定] A self-adjoint $T \in \ltrans(V)$ for inner-product space $V$ over $F$ is positive definite if \[<T(x)|x>\]
 
     \item[6.26 奇異值定理] Let $T \in \ltrans(V, W)$ for inner-product spaces $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r$, $\vsdim(V) = n$, and $\vsdim(W) = m$.
-    \item[6.27 SVD] For any matrix $A = F^{m\times n}$
+    \item[6.27 SVD] For any matrix $A = F^{m\times n}$ with rank $r$, \[A = QSR*\] holds for:
 
     \item[Def Pseudoinverse] $T^\dagger \in \ltrans(W, V)$ defined by $T^\dagger = (T')^{-1}T''$
     \item[偽反線轉定理]
