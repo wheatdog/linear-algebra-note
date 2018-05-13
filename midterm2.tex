@@ -146,6 +146,7 @@
         
         % 8th slide
     \item[Def 偽反線轉] $T^\dagger \in \ltrans(W, V)$ defined by $T^\dagger = (T')^{-1}T''$
+    \item[牛刀再試] $T^\dagger(W) = T^*(W) = N(T)^\perp$
     \item[偽反線轉定理] Let $T \in \ltrans(V,W)$ for $V$ and $W$ over $F \in \{\complexnum, \realnum\}$ with $\rank(T)=r, \vsdim(V)=n,\vsdim(W)=m$. If $\sigma, \beta, \gamma$ are as ensured by \textbf{6.26}, then $T^\dagger$ is the unique function in $\ltrans(W, V)$ satisfying $T^\dagger(\gamma_j)=\left\{\begin{array}{cl} \frac{1}{\sigma_j}\beta_j & \text{if} 1 \leq j \leq r\\ 0_V & \text{otherwise}\end{array}\right.$
     \item[偽反線運等價條件] If $T_1 \in \ltrans(V, W)$ and $T_2 \in \ltrans(W, V)$ for $V, W$ over $F \in \{\complexnum, \realnum\}$ and $\vsdim < \infty$, then $T_2 = T_1^\dagger$ iff \textbf{all} following hold:
         \begin{enumerate*}[label=({\alph*})]
@@ -154,12 +155,13 @@
             \item $T_1T_2$ and $T_2T_1$ are self-adjoint
         \end{enumerate*}
     \item[偽反矩陣定理] If $A = QSR^*$ is a SVD of matrix $A \in F^{m\times n}$ with $F \in \{\complexnum, \realnum\}$, then $A^\dagger = RS^\dagger Q^*$ is a SVD of matrix $A^\dagger \in F^{n\times m}$
+    \item[偽反矩陣觀察] $S^\dagger$ 對角線上非零的值是原本的倒數，另外 $S^\dagger$ 的行數和列數會互換。
     \item[6.30] For any system of linear equations $E: Ax = b$ with $A \in F^{m\times n}$, $y = A^\dagger b$ is the unique vector in $F^n$ with 
         \begin{itemize*}
             \item $\|Ay-b\|\leq \|Ax - b\|$ for any $x \in F^n$ and 
             \item $\|y\| < \|x\|$ any $x \in F^n \backslash \{y\}$ with $\|Ay-b\| = \|Ax-b\|$
         \end{itemize*}
-    \item[6.28 極分解定理] For any square matrix $A \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$, there exist a unitary matrix $Q \in F^{n\times n}$ and a positive semidefinite matrix $P \in F^{n\times n}$ s.t. $A = QP$. And, if $A$ is invertible, then the decomposition is unique
+    \item[6.28 極分解定理] For any square matrix $A \in F^{n\times n}$ with $F \in \{\complexnum, \realnum\}$, there exist a unitary matrix $Q \in F^{n\times n}$ and a positive semidefinite matrix $P \in F^{n\times n}$ s.t. $A = QP$. And, if $A$ is invertible, then the decomposition is unique. ($Q = Q_0 R^*$, $P = R S R^*$)
 
 \end{description}
 \end{document}
