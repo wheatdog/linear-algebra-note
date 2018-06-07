@@ -1,4 +1,4 @@
-TARGET := midterm2.tex
+TARGET := final.tex
 
 all: pdf
 

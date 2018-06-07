@@ -1,0 +1,70 @@
+%
+% Homework Details
+% - Title
+% - Due date
+% - University
+% - Class
+% - Class Alias
+% - Class Section
+% - Instructor
+% - Author
+% - AuthorID
+%
+
+\documentclass[9pt, twocolumn]{extarticle}
+
+%
+% Packages
+%
+
+\usepackage[a4paper,margin=0.5in,landscape]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[inline]{enumitem}
+
+%
+% Chinese
+%
+
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK TC Regular}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+%
+% Basic Document Settings
+%
+
+%\topmargin=-1.00in
+%\evensidemargin=0in
+%\oddsidemargin=0in
+%\textwidth=6.5in
+%\textheight=10.0in
+%\headsep=0.25in
+%
+%\linespread{1.0}
+
+\newcommand{\vsdim}{\ensuremath{\text{dim}}}
+\newcommand{\rank}{\ensuremath{\text{rank}}}
+\newcommand{\realnum}{\mathbb{R}}
+\newcommand{\complexnum}{\mathbb{C}}
+\newcommand{\ltrans}{\mathbb{L}}
+\newcommand{\polynom}{\mathbb{P}}
+
+\begin{document}
+
+\begin{description}
+        % 9th slide
+        
+        % 10th slide
+    \item[Notation] For any linear operator $T$ on $V$ over $F$ and any scalar $a \in F$, let $t_a \overset{def}{=} T  - a \cdot I_V$
+    \item[Def] Let $T \in \ltrans(V)$ for vector space $V$ over $F$. For any $a \in F$, define $E_T(a) = N(T_a)$
+    \item[Def  純量重數] The \emph{multiplicity} of a scalar $a$ w.r.t. $T \in \ltrans(V)$ is the largest integer $m$ with $(t -a)^m | f_T(t)$
+    \item[Def 推廣特徵組] Let $T \in \ltrans(V)$ for $V$ over $F$. $(\lambda, x)$ with $\lambda \in F$ and $x \in V \setminus \{0_V\}$ is a \emph{generalized eigenpair} of $T$ if $T_\lambda^l (x) = 0_V$ holds for some positive integer $l$.
+    \item[Obs 暖身觀察] If $(\lambda, x)$ is a generalized eigenpair of $T$, then $\lambda$ is an eigenvalue of $T$.
+    \item[Def $E_T(a)\rightarrow G_T(a)$] Let $T \in \ltrans (V)$ for $V$ over $F$. For any $a \in F$, let $G_T (a) = \{x \in V | T_a^l (x) = 0_V \text{ holds for a positive integer }l\}$ 
+
+
+\end{description}
+\end{document}
