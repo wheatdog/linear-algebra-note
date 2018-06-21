@@ -56,7 +56,14 @@
 
 \begin{description}
         % 9th slide
-        
+    \item[Axioms] \begin{enumerate}[label=A\arabic*.]
+                \item The speed of any light beam,  measured in $S$ or $S'$, is $1$.
+                \item $T_v: \realnum^4 \Rightarrow \realnum^4$ is an isomorphism.
+                \item If $T_v \begin{pmatrix}x \\ y \\ z \\ t\end{pmatrix} = \begin{pmatrix}x' \\ y' \\ z' \\ t'\end{pmatrix}$, then $y' = y$ and $z' = z$.
+                \item If $T_v \begin{pmatrix}x \\ y_1 \\ z_1 \\ t\end{pmatrix} = \begin{pmatrix}x' \\ y' \\ z' \\ t'\end{pmatrix}$ \& $T_v \begin{pmatrix}x \\ y_2 \\ z_2 \\ t\end{pmatrix} = \begin{pmatrix}x'' \\ y'' \\ z'' \\ t''\end{pmatrix}$, then $x'' = x'$ and $t'' = t'$.
+                \item The origin of $S'$ moves in the positive direction of the $x$-axis of $S$ at the constant velocity $v > 0$ as measured from $S$.
+    \end{enumerate}
+    \item[Thm Lorenz] If $\alpha$ is the standard basis of $\realnum^4$, then $[T_v]^\alpha_\alpha = \begin{pmatrix}\frac{1}{\sqrt{1-v^2}} & 0 & 0 & \frac{-v}{\sqrt{1-v^2}}\\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ \frac{-v}{\sqrt{1-v^2}} & 0 & 0 & \frac{1}{\sqrt{1-v^2}}\end{pmatrix}$
         % 10th slide
     \item[Notation] For any linear operator $T$ on $V$ over $F$ and any scalar $a \in F$, let $t_a \overset{def}{=} T  - a \cdot I_V$
     \item[Def] Let $T \in \ltrans(V)$ for vector space $V$ over $F$. For any $a \in F$, define $E_T(a) = N(T_a)$
